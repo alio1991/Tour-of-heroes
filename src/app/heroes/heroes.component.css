@@ -1,0 +1,21 @@
+p{
+    color:red;
+}
+
+.heroes{
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.heroe{
+    border: 2px solid black;
+    margin: 2px;
+    width: 300px;
+    display:flex;
+    flex-direction: row;
+}
+
+.id{
+    background-color: grey;
+}

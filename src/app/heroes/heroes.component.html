@@ -1,0 +1,4 @@
+<p>List of Heroes</p>
+<div *ngFor="let heroe of heroes" class="heroes">
+    <div class="heroe" (click)="showDetails(heroe)"><div class="id">{{heroe.id}}</div><div>{{heroe.alias}} - {{heroe.skills}}</div></div>
+</div>

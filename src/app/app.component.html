@@ -1,0 +1,17 @@
+
+<div style="text-align:center">
+  <h1>
+    {{title}}    
+  </h1>
+  <div class="menu">
+    <button class="top-option">TOP</button>
+    <button class="heroes-option">Heroes</button>
+  </div>
+  <app-hero-detail *ngIf="det; else noDetail" (details)="showDetails()" [(heroForDetail)]="heroForDetailA"></app-hero-detail>
+  <ng-template #noDetail>
+    <app-heroes (details)="showDetails($event)"></app-heroes>
+  </ng-template>
+  
+</div>
+
+
