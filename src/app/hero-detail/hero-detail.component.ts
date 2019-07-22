@@ -12,14 +12,15 @@ import { Hero } from '../hero';
 export class HeroDetailComponent implements OnInit {
 
   @Output() shouldShowDetails = new EventEmitter();
+  @Output() heroToShow: EventEmitter<Hero> = new EventEmitter();
   @Input() heroForDetail: Hero;
-
   constructor() { }
 
   ngOnInit() {
   }
 
   volver(){
+    this.heroToShow.emit(this.heroForDetail);
     this.shouldShowDetails.emit();
   }
 }

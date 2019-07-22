@@ -7,11 +7,11 @@
     <button class="top-option">TOP</button>
     <button class="heroes-option">Heroes</button>
   </div>
-  <app-hero-detail *ngIf="details; else noDetail" (shouldShowDetails)="showDetails()" [(heroForDetail)]="heroSelected"></app-hero-detail>
+  <app-hero-detail *ngIf="details; else noDetail" [(heroForDetail)]="heroSelected" (heroToShow)="heroChanged($event)"></app-hero-detail>
   <ng-template #noDetail>
-    <app-heroes (shouldShowDetails)="showDetails($event)"></app-heroes>
+    <app-heroes (shouldShowDetails)="showDetails($event)" ></app-heroes>
   </ng-template>
   
 </div>
-
+ 
 

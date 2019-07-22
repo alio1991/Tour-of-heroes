@@ -13,7 +13,7 @@ export class HeroesComponent implements OnInit {
   @Output() shouldShowDetails = new EventEmitter();
 
   constructor() { 
-    let hero1: Hero = {id: 1,alias: 'Superman',skills: 'Volar'};
+    let hero1: Hero = {id: 1,alias: 'Superman',skills: 'Vuela, tiene laser en los ojos, congela con el aliento, super fuerza'};
     let hero2: Hero = {id: 2,alias: 'Spiderman',skills: 'Lanza telas de araña'};
     let hero3: Hero = {id: 3,alias: 'Batman',skills: 'Tiene mucho dinero'};
     this.addHeroes([hero1,hero2,hero3]);
@@ -35,5 +35,9 @@ export class HeroesComponent implements OnInit {
 
   showDetails(hero:Hero){
     this.shouldShowDetails.emit(hero);
+  }
+
+  changeHero(ev){
+    
   }
 }

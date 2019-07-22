@@ -1,6 +1,6 @@
 <h2>Datos de {{heroForDetail.alias}}</h2>
 <div class="card">
-    Alias:<input type="text" value="{{heroForDetail.alias}}">
-    <p>{{heroForDetail.skills}}</p>
+    Alias:<input type="text" [(ngModel)]="heroForDetail.alias">
+    <p>Habilidades: {{heroForDetail.skills}}</p>
 </div>
 <button  (click)="volver()">Volver</button>
