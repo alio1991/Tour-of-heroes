@@ -10,7 +10,7 @@ import { Hero } from '../hero';
 export class HeroesComponent implements OnInit {
 
   heroes: Array<Hero> = [];
-  @Output() details = new EventEmitter();
+  @Output() shouldShowDetails = new EventEmitter();
 
   constructor() { 
     let hero1: Hero = {id: 1,alias: 'Superman',skills: 'Volar'};
@@ -34,6 +34,6 @@ export class HeroesComponent implements OnInit {
   }
 
   showDetails(hero:Hero){
-    this.details.emit(hero.alias);
+    this.shouldShowDetails.emit(hero);
   }
 }

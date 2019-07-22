@@ -1,6 +1,7 @@
 import { Component, ViewChild, Input } from '@angular/core';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { Hero } from './hero';
 
 
 
@@ -12,17 +13,17 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 export class AppComponent {
 
-  @Input('detail') det: Boolean;
+  @Input() details: Boolean;
   title:String = 'HEROES MANAGER';
-  @Input() heroForDetailA: String;
+  @Input() heroSelected: Event;
 
   constructor(){  }
 
   ngOnInit() {    }
    
    showDetails(ev:Event){
-    this.heroForDetailA = ev ? ev.toString() : "";
-    this.det = !this.det;
+    this.heroSelected = ev ? ev : undefined;
+    this.details = !this.details;
   }
   
 }

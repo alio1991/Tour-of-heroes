@@ -11,8 +11,8 @@ import { Hero } from '../hero';
 
 export class HeroDetailComponent implements OnInit {
 
-  @Output() details = new EventEmitter();
-  @Input() heroForDetail: String;
+  @Output() shouldShowDetails = new EventEmitter();
+  @Input() heroForDetail: Hero;
 
   constructor() { }
 
@@ -20,6 +20,6 @@ export class HeroDetailComponent implements OnInit {
   }
 
   volver(){
-    this.details.emit();
+    this.shouldShowDetails.emit();
   }
 }
