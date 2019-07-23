@@ -3,6 +3,7 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { Hero } from './hero';
+import { HeroesManagerService } from './heroes-manager.service';
 
 
 
@@ -19,7 +20,7 @@ export class AppComponent {
   @Input() heroSelected: Event;
   @ViewChild(HeroesComponent, {static: false}) heroesComponent: HeroesComponent;
 
-  constructor(){  }
+  constructor(protected serviceHeroes: HeroesManagerService){  }
 
   ngOnInit() {    }
    
@@ -29,11 +30,9 @@ export class AppComponent {
   }
 
   heroChanged(ev:Event){
-    // this.heroesComponent.changeHero(ev);
-    console.log(this.heroesComponent);
     this.showDetails(ev);
     this.heroSelected = ev;
-    // console.log(this.heroSelected);
+    this.serviceHeroes.modifyHero(<Hero><unknown>ev);
   }
   
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Hero } from '../hero';
+import { HeroesManagerService } from '../heroes-manager.service';
+
 
 @Component({
   selector: 'app-heroes',
@@ -11,19 +13,13 @@ export class HeroesComponent implements OnInit {
 
   heroes: Array<Hero> = [];
   @Output() shouldShowDetails = new EventEmitter();
+  @Input() heroForDetail: Hero;
 
-  constructor() { 
-    let hero1: Hero = {id: 1,alias: 'Superman',skills: 'Vuela, tiene laser en los ojos, congela con el aliento, super fuerza'};
-    let hero2: Hero = {id: 2,alias: 'Spiderman',skills: 'Lanza telas de araña'};
-    let hero3: Hero = {id: 3,alias: 'Batman',skills: 'Tiene mucho dinero'};
-    this.addHeroes([hero1,hero2,hero3]);
+  constructor(protected serviceHeroes: HeroesManagerService) { 
+    this.heroes = this.serviceHeroes.heroes;
   }
   
   ngOnInit() {  }
-
-  addHeroes(heroes:Array<Hero>){
-    this.heroes.push(...heroes);
-  }
 
   addHero(hero:Hero){
     this.heroes.push(hero);
@@ -37,7 +33,4 @@ export class HeroesComponent implements OnInit {
     this.shouldShowDetails.emit(hero);
   }
 
-  changeHero(ev){
-    
-  }
 }

@@ -9,7 +9,7 @@
   </div>
   <app-hero-detail *ngIf="details; else noDetail" [(heroForDetail)]="heroSelected" (heroToShow)="heroChanged($event)"></app-hero-detail>
   <ng-template #noDetail>
-    <app-heroes (shouldShowDetails)="showDetails($event)" ></app-heroes>
+    <app-heroes (shouldShowDetails)="showDetails($event)" [(heroForDetail)]="heroSelected" ></app-heroes>
   </ng-template>
   
 </div>
