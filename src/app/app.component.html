@@ -1,12 +1,12 @@
+<nav>
+  <button routerLink="/top">TOP of Heroes</button>
+  <button routerLink="/heroes" routerLinkActive="active">Heroes</button>
+</nav>
 
 <div style="text-align:center">
   <h1>
     {{title}}    
   </h1>
-  <div class="menu">
-    <button class="top-option">TOP</button>
-    <button class="heroes-option">Heroes</button>
-  </div>
   <app-hero-detail *ngIf="details; else noDetail" [(heroForDetail)]="heroSelected" (heroToShow)="heroChanged($event)"></app-hero-detail>
   <ng-template #noDetail>
     <app-heroes (shouldShowDetails)="showDetails($event)" [(heroForDetail)]="heroSelected" ></app-heroes>

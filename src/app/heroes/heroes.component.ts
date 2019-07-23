@@ -3,7 +3,6 @@ import { EventEmitter } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroesManagerService } from '../heroes-manager.service';
 
-
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',

@@ -1,7 +1,5 @@
 import { Component, ViewChild, Input } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
 import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { Hero } from './hero';
 import { HeroesManagerService } from './heroes-manager.service';
 

@@ -2,7 +2,6 @@ import { Component, OnInit, Output, Input } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Hero } from '../hero';
 
-
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
