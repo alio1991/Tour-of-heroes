@@ -12,25 +12,9 @@ import { HeroesManagerService } from './heroes-manager.service';
 })
 
 export class AppComponent {
-
-  @Input() details: Boolean;
+  
   title:String = 'HEROES MANAGER';
-  @Input() heroSelected: Event;
-  @ViewChild(HeroesComponent, {static: false}) heroesComponent: HeroesComponent;
 
   constructor(protected serviceHeroes: HeroesManagerService){  }
-
   ngOnInit() {    }
-   
-   showDetails(ev:Event){
-    this.heroSelected = ev ? ev : undefined;
-    this.details = !this.details;
-  }
-
-  heroChanged(ev:Event){
-    this.showDetails(ev);
-    this.heroSelected = ev;
-    this.serviceHeroes.modifyHero(<Hero><unknown>ev);
-  }
-  
 }

@@ -13,6 +13,8 @@ export class HeroesComponent implements OnInit {
   heroes: Array<Hero> = [];
   @Output() shouldShowDetails = new EventEmitter();
   @Input() heroForDetail: Hero;
+  // @Input() heroSelected: Event;
+
 
   constructor(protected serviceHeroes: HeroesManagerService) { 
     this.heroes = this.serviceHeroes.heroes;
@@ -28,8 +30,14 @@ export class HeroesComponent implements OnInit {
     this.heroes.unshift(hero);
   }
 
-  showDetails(hero:Hero){
+  showDetailsOf(hero:Hero){
+    this.heroForDetail = hero;
     this.shouldShowDetails.emit(hero);
   }
 
+
+  heroChanged(ev:Event){
+    // this.serviceHeroes.modifyHero(<Hero><unknown>ev);
+    this.heroForDetail = undefined;
+  }
 }
