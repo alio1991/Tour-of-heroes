@@ -1,12 +1,13 @@
-<nav>
-  <button routerLink="/top" routerLinkActive="active">TOP of Heroes</button>
-  <button routerLink="/heroes">Heroes</button>
-</nav>
+
 
 <div style="text-align:center">
   <h1>
     {{title}}    
   </h1>
+  <nav>
+      <div class="menu-option" routerLink="/top" routerLinkActive="active">TOP of Heroes</div>
+      <div class="menu-option" routerLink="/heroes">Heroes</div>
+    </nav>
   <router-outlet></router-outlet>
 </div>
  
