@@ -2,8 +2,13 @@
 
 
 <app-hero-detail *ngIf="heroForDetail; else noDetail" [(heroForDetail)]="heroForDetail" (shouldShowDetails)="heroChanged($event)"></app-hero-detail>
+
 <ng-template #noDetail>
-    <div *ngFor="let heroe of heroes" class="heroes">
-        <div class="heroe" (click)="showDetailsOf(heroe)"><div class="id">{{heroe.id}}</div><div class="info">{{heroe.alias}}</div></div>
+    <div class="heroes">
+        <div *ngFor="let heroe of heroes">
+            <div class="heroe" (click)="showDetailsOf(heroe)"><div class="id">{{heroe.id}}</div><div 
+            class="info">{{heroe.alias}}</div><button class="delete" (click)="deleteHero(heroe)">B</button><div class="score">{{heroe.score}}</div></div>
+        </div>
     </div>
+    <button class="nuevoHeroe" (click)="addHero()">Nuevo héroe</button>
 </ng-template>

@@ -22,16 +22,20 @@ export class HeroesManagerService {
     this.heroes.push(...heroes);
   }
 
+  deleteHero(hero:Hero){
+    this.heroes.unshift(hero);
+  }
+
   getHeroes(){
     return this.heroes;
   }
 
   getTop(){
-    this.heroes.sort(function(a, b) {
+    this.top = [...this.heroes];
+    this.top.sort(function(a, b) {
       return a.score-b.score;
     });
-    this.top = [...this.heroes];
-    return this.top.splice(3);
+    return this.top.splice(3).reverse();
   }
 
   modifyHero(hero:Hero){

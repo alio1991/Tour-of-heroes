@@ -1,4 +1,4 @@
 <h2>TOP Heroes</h2>
 <div *ngFor="let heroe of heroes" class="heroes">
-    <div class="heroe"><div class="id">{{heroe.id}}</div><div class="info">{{heroe.alias}}</div></div>
+    <div class="heroe" (click)="showDetailsOf(heroe)"><div class="id">{{heroe.id}}</div><div class="info">{{heroe.alias}}</div><div class="score">{{heroe.score}}</div></div>
 </div>

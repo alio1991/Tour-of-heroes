@@ -22,12 +22,13 @@ export class HeroesComponent implements OnInit {
   
   ngOnInit() {  }
 
-  addHero(hero:Hero){
-    this.heroes.push(hero);
+  addHero(){
+    alert("No Implementado");
+    // this.heroes.push(hero);
   }
 
   deleteHero(hero:Hero){
-    this.heroes.unshift(hero);
+    this.serviceHeroes.deleteHero(hero);
   }
 
   showDetailsOf(hero:Hero){

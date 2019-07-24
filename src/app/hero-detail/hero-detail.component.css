@@ -12,3 +12,12 @@
     /* margin: 75px 10px 10px; */
     text-align: left;
 }
+
+.score{
+    margin-left: auto;
+    width: 50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+}
